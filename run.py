@@ -231,3 +231,14 @@ while True:
                                              pin, email)
             print(result)
             break
+
+    elif choice == '2':
+        account_number = input("Enter Account Number : ")
+        r = bank.data_validation(account_number)
+        if r == False:
+            print('Incoreect pin u cannot deposit')
+            break
+        amount = float(input("Enter Amount to Deposit : "))
+        result = bank.deposit(account_number, amount)
+        print(result)
+        print(datetime.datetime.now())
