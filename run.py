@@ -54,3 +54,20 @@ class Bank:
         return "Deposited " + str(amount)
         + " successfully. New balance : "
         + str(self.accounts[account_number][1])
+    
+    def withdraw(self, account_number, amount):
+        '''
+        Function to withdraw and update balance
+        '''
+        if account_number not in self.accounts:
+            return "Account does not exist"
+        if amount <= 50:
+            return "Amount to withdraw must be over 50 Euros"
+
+        if self.accounts[account_number][1] < amount:
+            return "Insufficient balance."
+
+        self.accounts[account_number][1] -= amount
+        return "Withdrew " + str(amount)
+        + " successfully. New balance : "
+        + str(self.accounts[account_number][1])
