@@ -200,3 +200,34 @@ while True:
             count += 1
             if count == 4:
                 break
+
+        gender = input('Enter Gender M for Male and F for Female : ')
+        joining_balance = float(input("Enter Joining Balance minimum 400  : "))
+        count = 1
+        while (count <= 3):
+            pin = input("Enter 4 digit pin password : ")
+            a = re.fullmatch('[0-9][0-9][0-9][0-9]', pin)
+            # calling fullmatch function by passing pattern and n
+            if a != None:  # checked the number is valid  or not
+                break
+            print('This is not a valid pin must contain only 4 digits reenter'
+                  'You will get max 3 attempt your ', count, 'attempt failed')
+            count += 1
+            if count == 4:
+                break
+        count = 1
+        while (count <= 3):
+            email = input('Enter email_id : ')
+            is_valid = validate_email(email)
+            if is_valid == False:
+                print("Invalid email addressreenter You will get max 3 attempt"
+                      "your ',count ,'attempt failed")
+            count += 1
+            if count == 4:
+                break
+            else:
+                result = bank.create_account(account_number, account_user,
+                                             joining_balance, age, gender,
+                                             pin, email)
+            print(result)
+            break
