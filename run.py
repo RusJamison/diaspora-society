@@ -253,3 +253,12 @@ while True:
         result = bank.withdraw(account_number, amount)
         print(result)
         print(datetime.datetime.now())
+    
+    elif choice == '4':
+        r = bank.data_validation(account_number)
+        if r == False:
+            print('Incorrect pin u cannot check balance')
+            break
+        account_number = input("Enter Account Number : ")
+        result = bank.check_balance(account_number)
+        print(result)
