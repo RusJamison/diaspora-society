@@ -131,4 +131,19 @@ class Bank:
         else:
             return False
     
-    
+    def transfer_funds(self, account_number, to_accnumber, amount):
+        '''
+        Function to transfer funds among users
+        '''
+        if account_number in self.accounts and to_accnumber in self.accounts:
+            if self.accounts[account_number][1] >= amount:
+                self.accounts[to_accnumber][1] += amount
+                self.accounts[account_number][1] -= amount
+                print("Transfer completed successfully.")
+                return "Deposited " + str(amount)
+                + " successfully. New balance : "
+                + str(self.accounts[to_accnumber][1])
+            else:
+                print("Insufficient funds.")
+        else:
+            print("One or both accounts not found.")
