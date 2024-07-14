@@ -262,3 +262,14 @@ while True:
         account_number = input("Enter Account Number : ")
         result = bank.check_balance(account_number)
         print(result)
+    
+
+    elif choice == '5':
+        r = bank.data_validation(account_number)
+        if r == False:
+            print('Incorrect pin you cannot delete')
+            break
+        del_acc_no = input("Enter Account Number which you want to delete : ")
+        result = bank.delete_account(del_acc_no)
+        print(result)
+        print(datetime.datetime.now())
