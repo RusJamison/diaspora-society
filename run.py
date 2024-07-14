@@ -161,3 +161,42 @@ print("7. Display Account ")
 print("8: Transfer Fund")
 print("9. Display all accounts ")
 print("10.Exit")
+
+while True:
+#show_main_menu()
+    choice = input("\nEnter your Choice (1 to 10): ")
+    if choice == '1':
+        count = 1
+        while (count <= 3):
+            account_number = input("Enter 7 digit Account Number : ")
+            acc = re.fullmatch('[0-9][0-9][0-9][0-9][0-9][0-9][0-9]',
+                               account_number)
+            if acc != None:  # checked the number is valid  or not
+                break
+            print('Invalid account number it should be 7 digits! you'
+                  'will getmax 3 attempt your ', count, 'attempt failed')
+            count += 1
+        if count == 4:
+            break
+        count = 1
+        while (count <= 3):
+            account_user = input("Enter Account User's Name : ")
+            a = account_user.strip()
+            a = a.replace(" ", "").isalpha()
+            if a == True:
+                break
+            print('Name must contain only alphabets reenter You will get'
+                  'max 3 attempt your ', count, 'attempt failed')
+            count += 1
+            if count == 4:
+                break
+        count = 1
+        while (count <= 3):
+            age = input('Enter age : ')
+            if int(age) >= 18:
+                break
+            print('your age below 18  you cannot open account reenter'
+                  'You will get max 3 attempt your', count, 'attempt failed')
+            count += 1
+            if count == 4:
+                break
