@@ -81,3 +81,13 @@ class Bank:
 
         return "Account User : " + self.accounts[account_number][0]
         + "\nBalance : " + str(self.accounts[account_number][1])
+    
+    def delete_account(self, del_acc_no):
+        '''
+        Function discontinue account
+        '''
+        if del_acc_no not in self.accounts:
+            return "Account does not exist"
+        if del_acc_no in self.accounts:
+            self.accounts.pop(del_acc_no)
+            return "deleted account  successfully"
