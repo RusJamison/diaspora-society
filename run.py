@@ -38,3 +38,19 @@ class Bank:
 
         self.accounts[account_number] = [account_user, joining_balance, age,
                                          gender, pin, email]
+        field_names = ['account_number', 'account_user', 'joining_balance',
+                       'age', 'gender', 'pin', 'email']
+    
+    def deposit(self, account_number, amount):
+        '''
+        Function to check account and deposit minimum of 50 euros
+        '''
+        if account_number not in self.accounts:
+            return "Account does not exist"
+        if amount <= 50:
+            return "Amount to deposit must be over 50 Euros"
+        #  [account_user, joining_balance, age, gender, pin, email]
+        self.accounts[account_number][1] += amount
+        return "Deposited " + str(amount)
+        + " successfully. New balance : "
+        + str(self.accounts[account_number][1])
