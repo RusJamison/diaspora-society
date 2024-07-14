@@ -105,3 +105,16 @@ class Bank:
 
         return "Name changed successfully update name: " + str(
            self.accounts[account_number][0])
+    
+    def check_details(self, account_number):
+        '''
+        Checking account details
+        '''
+        if account_number not in self.accounts:
+
+            return "Account does not exist"
+        # [account_user0, joining_balance1, age2, gender3, pin4, email5]
+        return "Account User : " + self.accounts[account_number][0]
+        +"\nGender : " + self.accounts[account_number][3]
+        +"\nAge : " + str(self.accounts[account_number][2])
+        +"\nemail_id : " + self.accounts[account_number][5]
