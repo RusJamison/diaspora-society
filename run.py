@@ -288,3 +288,8 @@ while True:
             print(datetime.datetime.now())
         else:
             print('Your enter wrong pin hence not allow to edit')
+
+    elif choice == '7':
+        account_number = input("Enter Account Number  to check details : ")
+        result = bank.check_details(account_number)
+        print(result)
