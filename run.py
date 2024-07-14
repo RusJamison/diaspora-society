@@ -118,3 +118,17 @@ class Bank:
         +"\nGender : " + self.accounts[account_number][3]
         +"\nAge : " + str(self.accounts[account_number][2])
         +"\nemail_id : " + self.accounts[account_number][5]
+    
+    def data_validation(self, account_number):
+        '''
+        Check pin
+        '''
+        if account_number not in self.accounts:
+            return "Account does not exist"
+        pin = input('Enter pin : ')
+        if pin == self.accounts[account_number][4]:
+            return True
+        else:
+            return False
+    
+    
