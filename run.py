@@ -242,3 +242,14 @@ while True:
         result = bank.deposit(account_number, amount)
         print(result)
         print(datetime.datetime.now())
+
+    elif choice == '3':
+        account_number = input("Enter Account Number : ")
+        r = bank.data_validation(account_number)
+        if r == False:
+            print('Incorrect pin u cannot withdraw')
+            break
+        amount = float(input("Enter Amount to Withdraw : "))
+        result = bank.withdraw(account_number, amount)
+        print(result)
+        print(datetime.datetime.now())
