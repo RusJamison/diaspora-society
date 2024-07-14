@@ -91,3 +91,17 @@ class Bank:
         if del_acc_no in self.accounts:
             self.accounts.pop(del_acc_no)
             return "deleted account  successfully"
+    
+    def edit_account(self, account_number, new_name):
+        '''
+        Function to change name i.e married name for a woman
+        '''
+        if account_number not in self.accounts:
+            return "Account does not exist"
+        if account_number in self.accounts:
+            print("\nName before update "
+                  + str(self.accounts[account_number][0]))
+        self.accounts[account_number][0] = new_name
+
+        return "Name changed successfully update name: " + str(
+           self.accounts[account_number][0])
