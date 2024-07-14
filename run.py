@@ -71,3 +71,13 @@ class Bank:
         return "Withdrew " + str(amount)
         + " successfully. New balance : "
         + str(self.accounts[account_number][1])
+    
+    def check_balance(self, account_number):
+        '''
+        Function to check individual balance
+        '''
+        if account_number not in self.accounts:
+            return "Account does not exist"
+
+        return "Account User : " + self.accounts[account_number][0]
+        + "\nBalance : " + str(self.accounts[account_number][1])
