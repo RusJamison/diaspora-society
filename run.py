@@ -263,7 +263,6 @@ while True:
         result = bank.check_balance(account_number)
         print(result)
     
-
     elif choice == '5':
         r = bank.data_validation(account_number)
         if r == False:
@@ -273,3 +272,19 @@ while True:
         result = bank.delete_account(del_acc_no)
         print(result)
         print(datetime.datetime.now())
+
+    elif choice == '6':
+        account_number = input("Enter Account Number which you want to edit :")
+        r = bank.data_validation(account_number)
+        if r == True:
+            new_name = input('Enter new name : ')
+            a = new_name.strip()
+            a = new_name.replace(" ", "").isalpha()
+            if a != True:
+                print('Name must contain only alphabets')
+                break
+            result = bank.edit_account(account_number, new_name)
+            print(result)
+            print(datetime.datetime.now())
+        else:
+            print('Your enter wrong pin hence not allow to edit')
