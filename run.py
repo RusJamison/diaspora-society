@@ -293,3 +293,13 @@ while True:
         account_number = input("Enter Account Number  to check details : ")
         result = bank.check_details(account_number)
         print(result)
+    
+    elif choice == '8':
+        account_number = input("Enter Account Number  : ")
+        r = bank.data_validation(account_number)
+        if r == True:
+            amount = float(input('Enter transfer amount : '))
+            to_accnumber = input("Enter Account Number to Transfer fund  : ")
+            result = bank.transfer_funds(account_number, to_accnumber, amount)
+            print(result)
+            print(datetime.datetime.now())
