@@ -1,3 +1,7 @@
+import csv
+from validate_email import validate_email
+import re
+import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -14,6 +18,10 @@ SHEET = GSPREAD_CLIENT.open('diaspora_society')
 
 balance = SHEET.worksheet('balance')
 
-data = balance.get_all_values()
+class Bank:
 
-print(data)
+    def __init__(self):
+        '''
+        Create empty dictionary
+        '''
+        self.accounts = {}    # empty dictionary
