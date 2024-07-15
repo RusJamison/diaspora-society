@@ -18,6 +18,7 @@ SHEET = GSPREAD_CLIENT.open('diaspora_society')
 
 balance = SHEET.worksheet('balance')
 
+
 class Bank:
 
     def __init__(self):
@@ -30,7 +31,7 @@ class Bank:
                        age, gender, pin, email):
         '''
         Create account user details and check if account exist already.
-        '''               
+        '''
         if account_number in self.accounts:
             return "Account already exists"
         if joining_balance < 400:
@@ -51,8 +52,7 @@ class Bank:
                              'pin': pin,
                              'email': email})
         return "Account created successfully"
-        
-    
+
     def deposit(self, account_number, amount):
         '''
         Function to check account and deposit minimum of 50 euros
@@ -66,7 +66,7 @@ class Bank:
         return "Deposited " + str(amount)
         + " successfully. New balance : "
         + str(self.accounts[account_number][1])
-    
+
     def withdraw(self, account_number, amount):
         '''
         Function to withdraw and update balance
@@ -83,7 +83,7 @@ class Bank:
         return "Withdrew " + str(amount)
         + " successfully. New balance : "
         + str(self.accounts[account_number][1])
-    
+
     def check_balance(self, account_number):
         '''
         Function to check individual balance
@@ -93,7 +93,7 @@ class Bank:
 
         return "Account User : " + self.accounts[account_number][0]
         + "\nBalance : " + str(self.accounts[account_number][1])
-    
+
     def delete_account(self, del_acc_no):
         '''
         Function discontinue account
@@ -103,7 +103,7 @@ class Bank:
         if del_acc_no in self.accounts:
             self.accounts.pop(del_acc_no)
             return "deleted account  successfully"
-    
+
     def edit_account(self, account_number, new_name):
         '''
         Function to change name i.e married name for a woman
@@ -117,7 +117,7 @@ class Bank:
 
         return "Name changed successfully update name: " + str(
            self.accounts[account_number][0])
-    
+
     def check_details(self, account_number):
         '''
         Checking account details
@@ -130,7 +130,7 @@ class Bank:
         +"\nGender : " + self.accounts[account_number][3]
         +"\nAge : " + str(self.accounts[account_number][2])
         +"\nemail_id : " + self.accounts[account_number][5]
-    
+
     def data_validation(self, account_number):
         '''
         Check pin
@@ -142,7 +142,7 @@ class Bank:
             return True
         else:
             return False
-    
+
     def transfer_funds(self, account_number, to_accnumber, amount):
         '''
         Function to transfer funds among users
@@ -160,22 +160,25 @@ class Bank:
         else:
             print("One or both accounts not found.")
 
+
 bank = Bank()  # Create a Bank object
-#def show_main_menu():
-print("\nMENU OPTION")
-print("1. Create Account")
-print("2. Deposit Money")
-print("3. Withdraw Money")
-print("4. Check Balance")
-print("5. Delete Account")
-print("6. Edit  Account")
-print("7. Display Account ")
-print("8: Transfer Fund")
-print("9. Display all accounts ")
-print("10.Exit")
+
+
+def show_main_menu():
+    print("\nMENU OPTION")
+    print("1. Create Account")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Check Balance")
+    print("5. Delete Account")
+    print("6. Edit  Account")
+    print("7. Display Account ")
+    print("8: Transfer Fund")
+    print("9. Display all accounts ")
+    print("10.Exit")
 
 while True:
-#show_main_menu()
+    show_main_menu()
     choice = input("\nEnter your Choice (1 to 10): \n")
     if choice == '1':
         count = 1
@@ -214,7 +217,7 @@ while True:
                 break
 
         gender = input('Enter Gender M for Male and F for Female :\n')
-        joining_balance = float(input("Enter Joining Balance minimum 400  :\n"))
+        joining_balance = float(input("Enter Joining Balance minimum 400 :\n"))
         count = 1
         while (count <= 3):
             pin = input("Enter 4 digit pin password : \n")
@@ -231,21 +234,21 @@ while True:
         while (count <= 3):
             email = input('Enter email_id : \n')
             is_valid = validate_email(email)
-            #print('IS VALID?: ', is_valid)
+            # print('IS VALID?: ', is_valid)
             if is_valid == False:
-                print('Invalid email addressreenter You will get max 3 attempt' 
-                      'your ',count ,'attempt failed')
+                print('Invalid email address re-enter You will get max ' 
+                      '3 attempt your ', count, 'attempt failed')
             count += 1
-            #print('COUNT: ', count)
+            # print('COUNT: ', count)
             if count == 4:
                 print('COUNT == 4')
                 break
             else:
-                #print('IN ELSE BLOCK')
-                #print('account_number: ', account_number)
-                #print('account_user: ', account_user)
-                #print('joining_balance: ', joining_balance)
-                #print('email: ', email)
+                # print('IN ELSE BLOCK')
+                # print('account_number: ', account_number)
+                # print('account_user: ', account_user)
+                # print('joining_balance: ', joining_balance)
+                # print('email: ', email)
                 result = bank.create_account(account_number, account_user,
                                              joining_balance, age, gender,
                                              pin, email)
@@ -267,34 +270,36 @@ while True:
         account_number = input("Enter Account Number : \n")
         r = bank.data_validation(account_number)
         if r == False:
-            print('Incorrect pin u cannot withdraw')
+            print('Incorrect account-number you cannot withdraw')
             break
         amount = float(input("Enter Amount to Withdraw : \n"))
         result = bank.withdraw(account_number, amount)
         print(result)
         print(datetime.datetime.now())
-    
+
     elif choice == '4':
+        account_number = input("Enter Account Number : \n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incorrect pin u cannot check balance')
             break
-        account_number = input("Enter Account Number : \n")
+        # account_number = input("Enter Account Number : \n")
         result = bank.check_balance(account_number)
         print(result)
-    
+
     elif choice == '5':
+        account_number = input("Enter Account Number : \n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incorrect pin you cannot delete')
             break
-        del_acc_no = input("Enter Account Number which you want to delete : \n")
+        del_acc_no = input("Enter Account Number which you want to delete :\n")
         result = bank.delete_account(del_acc_no)
         print(result)
         print(datetime.datetime.now())
 
     elif choice == '6':
-        account_number = input("Enter Account Number which you want to edit : \n")
+        account_number = input("Enter Account Number you want to edit : \n")
         r = bank.data_validation(account_number)
         if r == True:
             new_name = input('Enter new name : \n')
@@ -313,7 +318,7 @@ while True:
         account_number = input("Enter Account Number  to check details : \n")
         result = bank.check_details(account_number)
         print(result)
-    
+
     elif choice == '8':
         account_number = input("Enter Account Number  : \n")
         r = bank.data_validation(account_number)
@@ -333,4 +338,5 @@ while True:
         print("Exiting the program.")
         break
     else:
-        print("Invalid Choice. Please Try Again !!!")                
+        print("Invalid Choice. Please Try Again !!!")
+               
