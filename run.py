@@ -56,12 +56,12 @@ class Bank:
     def deposit(self, account_number, amount):
         '''
         Function to check account and deposit minimum of 50 euros
+        [account_user, initial_balance, age, gender, pin, email]
         '''
         if account_number not in self.accounts:
             return "Account does not exist"
         if amount <= 50:
             return "Amount to deposit must be over 50 Euros"
-        #  [account_user, joining_balance, age, gender, pin, email]
         self.accounts[account_number][1] += amount
         return "Deposited " + str(amount)
         + " successfully. New balance : "
@@ -91,7 +91,7 @@ class Bank:
         if account_number not in self.accounts:
             return "Account does not exist"
 
-        return "Account User : " + self.accounts[account_number][0]+ "\nBalance : " + str(self.accounts[account_number][1])
+        return "Account User : " + self.accounts[account_number][0] + "\nBalance : " + str(self.accounts[account_number][1])
 
     def delete_account(self, del_acc_no):
         '''
@@ -175,11 +175,11 @@ print("10.Exit")
 
 while True:
     #show_main_menu()
-    choice = input("\nEnter your Choice (1 to 10): ")
+    choice = input("\nEnter your Choice (1 to 10):\n")
     if choice == '1':
         count = 1
         while (count <= 3):
-            account_number = input("Enter 7 digit Account Number : ")
+            account_number = input("Enter 7 digit Account Number :\n")
             acc = re.fullmatch('[0-9][0-9][0-9][0-9][0-9][0-9][0-9]',
                                account_number)
             if acc != None:  # checked the number is valid  or not
@@ -191,7 +191,7 @@ while True:
             break
         count = 1
         while (count <= 3):
-            account_user = input("Enter Account User's Name : ")
+            account_user = input("Enter Account User's Name :\n")
             a = account_user.strip()
             a = a.replace(" ", "").isalpha()
             if a == True:
@@ -203,7 +203,7 @@ while True:
                 break
         count = 1
         while (count <= 3):
-            age = input('Enter age : ')
+            age = input('Enter age :\n')
             if int(age) >= 18:
                 break
             print('your age below 18  you cannot open account reenter'
@@ -212,14 +212,13 @@ while True:
             if count == 4:
                 break
 
-        gender = input('Enter Gender M for Male and F for Female : ')
-        joining_balance = float(input("Enter Joining Balance minimum 400  : "))
+        gender = input('Enter Gender M for Male and F for Female :\n')
+        joining_balance = float(input("Enter Joining Balance minimum 400 :\n"))
         count = 1
         while (count <= 3):
-            pin = input("Enter 4 digit pin password : ")
+            pin = input("Enter 4 digit pin password :\n")
             a = re.fullmatch('[0-9][0-9][0-9][0-9]', pin)
-            # calling fullmatch function by passing pattern and n
-            if a != None:  # checked the number is valid  or not
+            if a != None:
                 break
             print('This is not a valid pin must contain only 4 digits reenter'
                   'You will get max 3 attempt your ', count, 'attempt failed')
@@ -228,7 +227,7 @@ while True:
                 break
         count = 1
         while (count <= 3):
-            email = input('Enter email_id : ')
+            email = input('Enter email_id :\n')
             is_valid = validate_email(email)
             if is_valid == False:
                 print("Invalid email addressreenter You will get max 3 attempt"
@@ -244,39 +243,38 @@ while True:
             break
 
     elif choice == '2':
-        account_number = input("Enter Account Number : ")
+        account_number = input("Enter Account Number :\n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incoreect pin u cannot deposit')
             break
-        amount = float(input("Enter Amount to Deposit : "))
+        amount = float(input("Enter Amount to Deposit :\n"))
         result = bank.deposit(account_number, amount)
         print(result)
         print(datetime.datetime.now())
 
     elif choice == '3':
-        account_number = input("Enter Account Number : \n")
+        account_number = input("Enter Account Number :\n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incorrect account-number you cannot withdraw')
             break
-        amount = float(input("Enter Amount to Withdraw : \n"))
+        amount = float(input("Enter Amount to Withdraw :\n"))
         result = bank.withdraw(account_number, amount)
         print(result)
         print(datetime.datetime.now())
 
     elif choice == '4':
-        account_number = input("Enter Account Number : \n")
+        account_number = input("Enter Account Number :\n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incorrect pin u cannot check balance')
             break
-        account_number = input("Enter Account Number : \n")
         result = bank.check_balance(account_number)
         print(result)
 
     elif choice == '5':
-        account_number = input("Enter Account Number : \n")
+        account_number = input("Enter Account Number :\n")
         r = bank.data_validation(account_number)
         if r == False:
             print('Incorrect pin you cannot delete')
@@ -287,10 +285,10 @@ while True:
         print(datetime.datetime.now())
 
     elif choice == '6':
-        account_number = input("Enter Account Number you want to edit : \n")
+        account_number = input("Enter Account Number you want to edit :\n")
         r = bank.data_validation(account_number)
         if r == True:
-            new_name = input('Enter new name : \n')
+            new_name = input('Enter new name :\n')
             a = new_name.strip()
             a = new_name.replace(" ", "").isalpha()
             if a != True:
@@ -303,16 +301,16 @@ while True:
             print('Your enter wrong pin hence not allow to edit')
 
     elif choice == '7':
-        account_number = input("Enter Account Number  to check details : \n")
+        account_number = input("Enter Account Number  to check details :\n")
         result = bank.check_details(account_number)
         print(result)
 
     elif choice == '8':
-        account_number = input("Enter Account Number  : \n")
+        account_number = input("Enter Account Number  :\n")
         r = bank.data_validation(account_number)
         if r == True:
-            amount = float(input('Enter transfer amount : '))
-            to_accnumber = input("Enter Account Number to Transfer fund  : \n")
+            amount = float(input('Enter transfer amount :\n'))
+            to_accnumber = input("Enter Account Number to Transfer fund  :\n")
             result = bank.transfer_funds(account_number, to_accnumber, amount)
             print(result)
             print(datetime.datetime.now())
