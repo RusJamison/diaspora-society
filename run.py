@@ -91,8 +91,7 @@ class Bank:
         if account_number not in self.accounts:
             return "Account does not exist"
 
-        return "Account User : " + self.accounts[account_number][0]
-        + "\nBalance : " + str(self.accounts[account_number][1])
+        return "Account User : " + self.accounts[account_number][0]+ "\nBalance : " + str(self.accounts[account_number][1])
 
     def delete_account(self, del_acc_no):
         '''
@@ -126,10 +125,7 @@ class Bank:
 
             return "Account does not exist"
         # [account_user0, joining_balance1, age2, gender3, pin4, email5]
-        return "Account User : " + self.accounts[account_number][0]
-        +"\nGender : " + self.accounts[account_number][3]
-        +"\nAge : " + str(self.accounts[account_number][2])
-        +"\nemail_id : " + self.accounts[account_number][5]
+        return "Account User : " + self.accounts[account_number][0] +"\nGender : " + self.accounts[account_number][3]+"\nAge : " + str(self.accounts[account_number][2])+"\nemail_id : " + self.accounts[account_number][5]
 
     def data_validation(self, account_number):
         '''
@@ -164,26 +160,26 @@ class Bank:
 bank = Bank()  # Create a Bank object
 
 
-def show_main_menu():
-    print("\nMENU OPTION")
-    print("1. Create Account")
-    print("2. Deposit Money")
-    print("3. Withdraw Money")
-    print("4. Check Balance")
-    print("5. Delete Account")
-    print("6. Edit  Account")
-    print("7. Display Account ")
-    print("8: Transfer Fund")
-    print("9. Display all accounts ")
-    print("10.Exit")
+#def show_main_menu():
+print("\nMENU OPTION")
+print("1. Create Account")
+print("2. Deposit Money")
+print("3. Withdraw Money")
+print("4. Check Balance")
+print("5. Delete Account")
+print("6. Edit  Account")
+print("7. Display Account ")
+print("8: Transfer Fund")
+print("9. Display all accounts ")
+print("10.Exit")
 
 while True:
-    show_main_menu()
-    choice = input("\nEnter your Choice (1 to 10): \n")
+    #show_main_menu()
+    choice = input("\nEnter your Choice (1 to 10): ")
     if choice == '1':
         count = 1
         while (count <= 3):
-            account_number = input("Enter 7 digit Account Number : \n")
+            account_number = input("Enter 7 digit Account Number : ")
             acc = re.fullmatch('[0-9][0-9][0-9][0-9][0-9][0-9][0-9]',
                                account_number)
             if acc != None:  # checked the number is valid  or not
@@ -195,7 +191,7 @@ while True:
             break
         count = 1
         while (count <= 3):
-            account_user = input("Enter Account User's Name : \n")
+            account_user = input("Enter Account User's Name : ")
             a = account_user.strip()
             a = a.replace(" ", "").isalpha()
             if a == True:
@@ -207,7 +203,7 @@ while True:
                 break
         count = 1
         while (count <= 3):
-            age = input('Enter age :\n')
+            age = input('Enter age : ')
             if int(age) >= 18:
                 break
             print('your age below 18  you cannot open account reenter'
@@ -216,11 +212,11 @@ while True:
             if count == 4:
                 break
 
-        gender = input('Enter Gender M for Male and F for Female :\n')
-        joining_balance = float(input("Enter Joining Balance minimum 400 :\n"))
+        gender = input('Enter Gender M for Male and F for Female : ')
+        joining_balance = float(input("Enter Joining Balance minimum 400  : "))
         count = 1
         while (count <= 3):
-            pin = input("Enter 4 digit pin password : \n")
+            pin = input("Enter 4 digit pin password : ")
             a = re.fullmatch('[0-9][0-9][0-9][0-9]', pin)
             # calling fullmatch function by passing pattern and n
             if a != None:  # checked the number is valid  or not
@@ -232,27 +228,19 @@ while True:
                 break
         count = 1
         while (count <= 3):
-            email = input('Enter email_id : \n')
+            email = input('Enter email_id : ')
             is_valid = validate_email(email)
-            # print('IS VALID?: ', is_valid)
             if is_valid == False:
-                print('Invalid email address re-enter You will get max ' 
-                      '3 attempt your ', count, 'attempt failed')
+                print("Invalid email addressreenter You will get max 3 attempt"
+                      "your ',count ,'attempt failed")
             count += 1
-            # print('COUNT: ', count)
             if count == 4:
-                print('COUNT == 4')
                 break
             else:
-                # print('IN ELSE BLOCK')
-                # print('account_number: ', account_number)
-                # print('account_user: ', account_user)
-                # print('joining_balance: ', joining_balance)
-                # print('email: ', email)
                 result = bank.create_account(account_number, account_user,
                                              joining_balance, age, gender,
                                              pin, email)
-                print('result: ', result)
+            print(result)
             break
 
     elif choice == '2':
@@ -283,7 +271,7 @@ while True:
         if r == False:
             print('Incorrect pin u cannot check balance')
             break
-        # account_number = input("Enter Account Number : \n")
+        account_number = input("Enter Account Number : \n")
         result = bank.check_balance(account_number)
         print(result)
 
