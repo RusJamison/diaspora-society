@@ -160,21 +160,21 @@ class Bank:
 bank = Bank()  # Create a Bank object
 
 
-#def show_main_menu():
-print("\nMENU OPTION")
-print("1. Create Account")
-print("2. Deposit Money")
-print("3. Withdraw Money")
-print("4. Check Balance")
-print("5. Delete Account")
-print("6. Edit  Account")
-print("7. Display Account ")
-print("8: Transfer Fund")
-print("9. Display all accounts ")
-print("10.Exit")
+def show_main_menu():
+    print("\nMENU OPTION")
+    print("1. Create Account")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Check Balance")
+    print("5. Delete Account")
+    print("6. Edit  Account")
+    print("7. Display Account ")
+    print("8: Transfer Fund")
+    print("9. Display all accounts ")
+    print("10.Exit")
 
 while True:
-    #show_main_menu()
+    show_main_menu()
     choice = input("\nEnter your Choice (1 to 10):\n")
     if choice == '1':
         count = 1
