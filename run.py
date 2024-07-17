@@ -91,7 +91,9 @@ class Bank:
         if account_number not in self.accounts:
             return "Account does not exist"
 
-        return "Account User : " + self.accounts[account_number][0] + "\nBalance : " + str(self.accounts[account_number][1])
+        account_user = self.accounts[account_number][0]
+        balance = self.accounts[account_number][1]
+        return f"Account User: {account_user}\nBalance: {balance}"
 
     def delete_account(self, del_acc_no):
         '''
@@ -125,7 +127,18 @@ class Bank:
 
             return "Account does not exist"
         # [account_user0, joining_balance1, age2, gender3, pin4, email5]
-        return "Account User : " + self.accounts[account_number][0] +"\nGender : " + self.accounts[account_number][3]+"\nAge : " + str(self.accounts[account_number][2])+"\nemail_id : " + self.accounts[account_number][5]
+
+        account_user = self.accounts[account_number][0]
+        gender = self.accounts[account_number][3]
+        age = self.accounts[account_number][2]
+        email = self.accounts[account_number][5]
+
+        return (
+            f"Account User: {account_user}\n"
+            f"Gender: {gender}\n"
+            f"Age: {age}\n"
+            f"Email ID: {email}"
+        )
 
     def data_validation(self, account_number):
         '''
