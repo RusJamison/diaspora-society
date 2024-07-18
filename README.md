@@ -189,11 +189,13 @@ Depending with group for this model the data can be stored on a local computer o
 
 - [Python Validator](http://pep8online.com/)
 
-    - result for `run.py`
+    - result for `run.py` with errors.
 
       ![Python Validation Results](documentation/images/python-linter-validation-error.PNG)
 
+    - result after errors cleared for CI Python Linter
 
+      ![Python Validation Results](documentation/images/python-linter-validation.PNG)
 
 
 ## Deployment
@@ -280,8 +282,4 @@ Python Object-Oriented Programming: Bank class for customer account management(h
 
 
 Bank Management System Program in Python(https://www.includehelp.com/python/compute-the-net-amount-of-a-bank-account-based-on-the-transactions.aspx)
-
-
-
-
 
