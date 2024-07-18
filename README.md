@@ -2,13 +2,13 @@
 
 [View the project here](https://diaspora-society-850f7c18f583.herokuapp.com/)
 
-Banking is one of the biggest beneficiaries of information technology. In the past it it used to take 10 days to transfer money from one country to another but now it takes less than 10 minutes to achieve the same. At the same time the world has been turned into a global village. Each country has now a large diaspora community - A diaspora is a group of people who don't live in their original country but still maintain their heritage in the new country.
+Banking is one of the biggest beneficiaries of information technology. In the past it it used to take 10 days to transfer money from one country to another but now it takes less than 10 minutes to achieve the same. At the same time the world has been turned into a global village. Each country has now a large diaspora community - A diaspora is a group of people who don't live in their original country but still maintain their heritage in the new country for example burial society where members of society contribute when someone's family member dies. Society contribute towards burial costs.
 
-The diaspora communities involve in their small or large group building society, burial society, credit society. To carry these activities many small diaspora communities keep their financial records on simple spreadsheet without full transparence to members. This is a source of disagreement which leads to un unhappy ending of those groups. The original goal is good but money accountabily breaks these societies.
+The diaspora communities involve in their small or large group building society, burial society, credit society. To carry these activities many small diaspora communities keep their financial records on simple spreadsheet without full transparence to members. This is a source of disagreement which leads to an unhappy ending of those groups. The original goal is good but money accountabily breaks these societies.
 
-This diaspora society banking model is a simple application these groups can adopt and model it to their special need. In short the Diaspora Society banking model is a command line application to manage small clubs banking needs or just use it as a financial record for its members and help to clear the disagreements.
+This diaspora society banking model is a simple application these groups can adopt and model it to their special needs. In short the Diaspora Society banking model is a command line application to manage small clubs banking needs or just use it as a financial record for its members and help to clear the disagreements.
 
-The application allows users to create banking accounts, deposit money, withdraw money, check their balance, remove users from groups, transfer money among users and check final records of the group or club.
+The banking application allows users to create banking accounts, deposit money, withdraw money, check their balance, remove users from groups, transfer money among users and check final records of the group or club.
 
 Depending with group for this model the data can be stored on a local computer or on a Google sheet. For demonstration I have included a local storage. Since these groups might have no one with strong information technology skill the demonstration uses local strorage to the prefered Google sheet. This application will be used to teach kids about banking so it must be simple that the kids understand. The full banking can be applied for large groups.
 
