@@ -191,7 +191,8 @@ Depending with group for this model the data can be stored on a local computer o
 
     - result for `run.py`
 
-      ![Python Validation Results](documentation/validation/python-pep8online-validation-results.png)
+      ![Python Validation Results](documentation/images/python-linter-validation-error.PNG)
+
 
 
 
@@ -239,35 +240,46 @@ This project was deployed using Code Institute's mock terminal for Heroku. Below
 
     Thanks to my mentor Brian Macharia for his mentoring sessions, guidance, patience, encouragement and constant motivation throughout the project.
 
+    Thanks to the tutors whom I get help ans support during the project. Special mentioning Alan and Rebecca for their knowledge sharing skills, patience and quick response.
+
 
 ### Content
-Javascript Essentials by Lawrence Turton (https://irishheart.ie/your-health/our-health-programmes/healthy-communities/mobile-health-unit/)
+Object Oriented Programming in Python by Estefania Cassingena Navone (https://www.udemy.com/course/python-object-oriented-programming-oop/learn/lecture/12356228?start=150#overview)
 
-Build Responsive Real-World Websites with HTML and CSS by Jonas Schmedtmann (https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3)
+Python Masterclass 2024: Build 24 Real World Python Projects by Ashutosh Pawar (https://www.udemy.com/course/python-masterclass-course/learn/lecture/37365778?start=105#overview)
 
-The Complete 2024 Web Development Bootcamp by Dr. Angela Yu (https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/)
+100 Days of Code: The Complete Python Pro Bootcamp
+ by Dr. Angela Yu (https://www.udemy.com/course/100-days-of-code/learn/lecture/20628484?start=60#overview)
 
-50 Projects In 50 Days - HTML, CSS & JavaScript by Brad Traversy and Florin Pop (https://www.healthline.com/health-news/why-so-many-men-avoid-doctors?c=62125905332)
+Python 3: Deep Dive (Part 3 - Dictionaries, Sets, JSON)
+ by Dr. Fred Baptiste (https://www.udemy.com/course/python-3-deep-dive-part-3/learn/lecture/12049204?start=615#overview)
 
-IC Technology in medical equipment (https://www.avnet.com/wps/portal/apac/resources/article/ic-technology-in-medical-equipment/)
+Google Sheets - The Comprehensive Masterclass by Leila Gharani
+ (https://www.udemy.com/course/google-sheets-masterclass/learn/lecture/22289746#overview)
 
-I love Coding To Do project (https://ilovecoding.org/)
+Python Mega Course: Learn Python in 60 Days, Build 20 Apps by Ardit Sulce
+ (https://www.udemy.com/course/the-python-mega-course/learn/lecture/34597268?start=240#overview)
 
-The Modern Javascript Bootcamp Course by Colt Steele (https://www.emedicinehealth.com/checkup/article_em.htm)
+Google sheets(https://medium.com/hacktive-devs/gspread-automate-google-sheet-with-python-dc1fa7c65c21)
 
-Flex codes (https://coder-coder.com/build-flexbox-website-layout/)
+README by Elaine Broche(https://raw.githubusercontent.com/elainebroche-dev/ms3-event-scheduler/main/README.md)
 
-Nav (https://tutorials.shecodes.com.au/html_and_css/4_structure/3_nav/)
+README(https://raw.githubusercontent.com/OleksiiKova/hangman/main/README.md)
 
-Flex (https://tutorials.shecodes.com.au/html_and_css/4_structure/3_nav/)
+Create Bank Management Project with Python(https://inprogrammer.com/bank-management-project-with-python/)
 
-Navigation bar code(https://www.linkedin.com/learning/html-and-css-linking/creating-a-simple-vertical-navigation-bar)
+Bank Management System Project in Python(https://www.naukri.com/code360/library/bank-management-system-project-in-python)
 
-README.md (Love Maths project and Coding Club project Institute Learning Management System)(https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+3/)
+Python Project: Building Online Banking App(https://www.udemy.com/course/python-project-building-online-banking-app/?couponCode=KEEPLEARNING)
 
-README.md(https://github.com/elainebroche-dev/ms1-thrive/)
+Python program to create Bankaccount class with deposit, withdraw function(https://www.geeksforgeeks.org/python-program-to-create-bankaccount-class-with-deposit-withdraw-function/)
 
-CKEditor(https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor)
+Python bank model(https://github.com/zea17/dragon-bank/blob/master/bank.py)
+
+Python Object-Oriented Programming: Bank class for customer account management(https://www.w3resource.com/python-exercises/oop/python-oop-exercise-11.php)
+
+
+Bank Management System Program in Python(https://www.includehelp.com/python/compute-the-net-amount-of-a-bank-account-based-on-the-transactions.aspx)
 
 
 
