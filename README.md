@@ -283,3 +283,8 @@ Python Object-Oriented Programming: Bank class for customer account management(h
 
 Bank Management System Program in Python(https://www.includehelp.com/python/compute-the-net-amount-of-a-bank-account-based-on-the-transactions.aspx)
 
+Python program to add accounts in a bank (Bank Management System)(https://www.includehelp.com/python/add-accounts-in-a-bank-bank-management-system.aspx)
+Java Guides(https://www.javaguides.net/search/label/Mini%20Projects?&max-results=10)
+Python Functions, Files, and Dictionaries by University of Michigan(https://www.coursera.org/learn/python-functions-files-dictionaries/home/module/1)
+Crash Course on Python by Google(https://www.coursera.org/learn/python-crash-course/home/module/1)
+
